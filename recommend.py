@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import googletrans
+# import googletrans
 
 def Recommend(title, cos_sim):
     
