@@ -33,6 +33,16 @@ st.title('📔독서는 마음의 양식📓')
 
 title = st.text_input("책 제목을 입력해주세요")
 
+import time
+latest_iteration = st.empty()
+bar = st.progress(0)
+
+for i in range(100):
+  # Update the progress bar with each iteration.
+  latest_iteration.text(f'Iteration {i+1}')
+  bar.progress(i + 1)
+  time.sleep(0.1)
+
 if title:
     ans = Recommend(title, cos_sim)
     ans.reset_index(drop = True, inplace = True)
@@ -49,5 +59,7 @@ if title:
         st.header("")
     
     st.multiselect('마음에 드는 책을 선택하세요(복수 선택 가능)- 🛒', choice_book)
+    
+    
 
 
