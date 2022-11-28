@@ -7,9 +7,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 df = pd.read_csv('book.csv')
 
 # 제 컴퓨터로는 데이터 개수를 줄여야 돌아갑니다...
-df1 = df.head(3000)
 
-description = df1['description']
+description = df['description']
 
 # TF - IDF 기법으로 벡터화
 # 20000개의 줄거리는 약 80000개의 단어로 이루어져있다. (전처리 완료돼서 많이 줄었다.)
