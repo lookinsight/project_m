@@ -45,3 +45,6 @@ if title:
         with col2:
             st.write(ans.description[i][:400] + "   ...")
         st.header("")
+
+st.multiselect('맘에 드는 책을 선택하세요(복수 선택 가능): ', ans[0])
+
