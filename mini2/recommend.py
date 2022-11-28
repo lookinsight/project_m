@@ -35,7 +35,7 @@ title = st.text_input("책 제목을 입력해주세요")
 
 import time
 latest_iteration = st.empty()
-bar = st.progress(0)
+bar = st.progress(100)
 
 for i in range(100):
   # Update the progress bar with each iteration.
