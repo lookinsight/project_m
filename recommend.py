@@ -36,15 +36,18 @@ title = st.text_input("책 제목을 입력해주세요")
 if title:
     ans = Recommend(title, cos_sim)
     ans.reset_index(drop = True, inplace = True)
-     
+    
+    choice_book = []
     for i in range(5):
         st.subheader(ans.Title[i])
+        choice_book.append(ans.Title[i])
         col1, col2 = st.columns(2)
         with col1:
             st.image(ans.image[i], width = 200)
         with col2:
             st.write(ans.description[i][:400] + "   ...")
         st.header("")
+    
+    st.multiselect('마음에 드는 책을 선택하세요(복수 선택 가능)- 🛒', choice_book)
 
-st.multiselect('맘에 드는 책을 선택하세요(복수 선택 가능): ', ans[0])
 
